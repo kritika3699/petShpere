@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your saved favourite pets on PetSphere. Review and manage the pets you've hearted.">
+  <title>My Favourites — PetSphere</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233D7A5C'><path d='M12 2a3 3 0 0 0-3 3c0 .44.1 1.05.29 1.57A3.5 3.5 0 0 0 7 10c0 1.93 1.57 3.5 3.5 3.5.76 0 1.47-.24 2.05-.65.2.22.45.4.74.53A5.5 5.5 0 0 0 12 22a5.5 5.5 0 0 0 5.4-4.5c.32-.14.6-.33.82-.57.58.41 1.29.65 2.05.65 1.93 0 3.5-1.57 3.5-3.5 0-1.5-.94-2.77-2.27-3.26.17-.5.27-.99.27-1.4a3 3 0 0 0-3-3c-.8 0-1.51.32-2.04.83A5.46 5.46 0 0 0 15 5a3 3 0 0 0-3-3z'/></svg>">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- ── Navbar ───────────────────────────────────────────── -->
+<nav class="navbar" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="PetSphere Home">
+      <div class="nav-logo-icon">
+        <i data-lucide="paw-print" style="color:white;width:22px;height:22px;"></i>
+      </div>
+      <span class="nav-logo-text">Pet<em>Sphere</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pets.html">Explore Pets</a>
+      <a href="favourites.html">Favourites</a>
+      <a href="about.html">About Us</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="favourites.html" class="nav-fav-btn" aria-label="View favourites">
+        <i data-lucide="heart" style="color:var(--orange);width:20px;height:20px;"></i>
+        <span class="fav-count" id="fav-count-nav"></span>
+      </a>
+      <a href="pets.html" class="btn btn-primary btn-sm nav-cta">
+        <span>Adopt a Pet</span>
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"><i data-lucide="home" style="width:16px;height:16px;margin-right:8px;"></i> Home</a>
+  <a href="pets.html"><i data-lucide="paw-print" style="width:16px;height:16px;margin-right:8px;"></i> Explore Pets</a>
+  <a href="favourites.html"><i data-lucide="heart" style="width:16px;height:16px;margin-right:8px;"></i> Favourites</a>
+  <a href="about.html"><i data-lucide="info" style="width:16px;height:16px;margin-right:8px;"></i> About Us</a>
+  <a href="about.html#contact"><i data-lucide="mail" style="width:16px;height:16px;margin-right:8px;"></i> Contact</a>
+</div>
+
+<!-- ── Page Hero ─────────────────────────────────────────── -->
+<div class="page-pad-top">
+  <section class="page-hero" aria-label="Favourites header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>My Favourites</span>
+      </div>
+      <h1 class="page-hero-title">My <span class="serif">Favourites</span></h1>
+      <p class="page-hero-sub" id="fav-subtitle">Your saved companions — <span id="fav-hero-count">0</span> animals waiting to meet you!</p>
+    </div>
+  </section>
+</div>
+
+<!-- ── Main Content ───────────────────────────────────────── -->
+<section class="section-pad" style="background:var(--cream-2);" aria-label="Favourite pets list">
+  <div class="container">
+
+    <!-- Actions bar (only shown when there are favourites) -->
+    <div id="fav-actions-bar" style="display:none; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+      <p class="results-count" id="fav-count-text" aria-live="polite" style="font-weight:600;color:var(--char);"></p>
+      <button class="btn btn-glass btn-sm" id="clear-all-favs-btn" onclick="clearAllFavs()" aria-label="Remove all favourites">
+        <i data-lucide="trash-2" style="width:14px;height:14px;color:#e74c3c;"></i>
+        <span>Clear All</span>
+      </button>
+    </div>
+
+    <!-- Grid / Empty state -->
+    <div id="fav-content">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ── Suggested Pets (when empty) ───────────────────────── -->
+<section class="section-pad" id="suggest-section" style="display:none; background:var(--cream);" aria-label="Suggested pets">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:36px;">
+      <span class="section-label">
+        <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+        Recommended for You
+      </span>
+      <h2 class="section-title" style="font-size:1.8rem;">Explore Some <span class="serif">Pets</span></h2>
+    </div>
+    <div class="pets-grid" id="suggest-grid"></div>
+    <div class="text-center" style="margin-top:32px;">
+      <a href="pets.html" class="btn btn-green btn-lg">
+        <span>Browse All Pets</span>
+        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">
+            <i data-lucide="paw-print" style="color:white;width:20px;height:20px;"></i>
+          </div>
+          <div class="footer-brand-name">Pet<em>Sphere</em></div>
+        </div>
+        <p class="footer-desc">Connecting loving families with pets who need them most.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <a href="index.html">Home</a>
+        <a href="pets.html">Explore Pets</a>
+        <a href="adoption.html">Apply to Adopt</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Categories</div>
+        <a href="pets.html?cat=dogs">Dogs</a>
+        <a href="pets.html?cat=cats">Cats</a>
+        <a href="pets.html?cat=rabbits">Rabbits</a>
+        <a href="pets.html?cat=parrots">Parrots</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i data-lucide="phone" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i data-lucide="mail" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>hello@petsphere.in</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 PetSphere. Dedicated to animal rescue.</span>
+      <span>Demo project — BCA College Assignment</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/pets.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ── Favourites Page Script ───────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  renderFavouritesPage();
+  if (window.lucide) lucide.createIcons();
+});
+
+function renderFavouritesPage() {
+  const ids = getFavourites();
+  const favPets = ids.map(id => getPetById(id)).filter(Boolean);
+
+  document.getElementById('fav-hero-count').textContent = favPets.length;
+
+  const content = document.getElementById('fav-content');
+  const actionsBar = document.getElementById('fav-actions-bar');
+  const countText = document.getElementById('fav-count-text');
+  const suggestSection = document.getElementById('suggest-section');
+
+  if (favPets.length === 0) {
+    actionsBar.style.display = 'none';
+    suggestSection.style.display = '';
+    renderSuggested();
+    content.innerHTML = `
+      <div class="fav-empty" role="status" aria-label="No favourites">
+        <div style="width:72px;height:72px;background:var(--orange-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+          <i data-lucide="heart" style="width:36px;height:36px;color:var(--orange);"></i>
+        </div>
+        <h3>No Favourites Saved Yet</h3>
+        <p>Click the heart icon on any pet card to add them to your saved list. Your favourites will be stored right here on your browser.</p>
+        <a href="pets.html" class="btn btn-green btn-lg" id="fav-explore-btn">
+          <i data-lucide="compass" style="width:18px;height:18px;"></i>
+          <span>Explore Pets</span>
+        </a>
+      </div>`;
+  } else {
+    actionsBar.style.display = 'flex';
+    suggestSection.style.display = 'none';
+    countText.innerHTML = `You have <strong>${favPets.length}</strong> saved pet${favPets.length !== 1 ? 's' : ''}`;
+    const grid = document.createElement('div');
+    grid.className = 'pets-grid';
+    grid.id = 'favs-grid';
+    grid.innerHTML = favPets.map(buildPetCard).join('');
+    content.innerHTML = '';
+    content.appendChild(grid);
+    setTimeout(() => {
+      initScrollReveal();
+      initTilt();
+    }, 50);
+  }
+  if (window.lucide) lucide.createIcons();
+}
+
+function renderSuggested() {
+  const suggested = PETS.slice(0, 4);
+  document.getElementById('suggest-grid').innerHTML = suggested.map(buildPetCard).join('');
+  setTimeout(() => {
+    initScrollReveal();
+    initTilt();
+    if (window.lucide) lucide.createIcons();
+  }, 50);
+}
+
+function clearAllFavs() {
+  if (!confirm('Remove all saved favourites?')) return;
+  localStorage.setItem('petsphere_favourites', '[]');
+  updateFavCount();
+  renderFavouritesPage();
+  showToast('All favourites cleared.', 'info');
+}
+
+const _orig = window.handleFavBtn;
+window.handleFavBtn = function(el, id, isTextBtn) {
+  _orig(el, id, isTextBtn);
+  setTimeout(renderFavouritesPage, 100);
+};
+</script>
+</body>
+</html>

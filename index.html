@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PetSphere — Find your perfect furry, feathered, or scaly companion. Browse dogs, cats, rabbits, parrots, fish, and turtles available for adoption.">
+  <title>PetSphere — Every Pet Deserves a Loving Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233D7A5C'><path d='M12 2a3 3 0 0 0-3 3c0 .44.1 1.05.29 1.57A3.5 3.5 0 0 0 7 10c0 1.93 1.57 3.5 3.5 3.5.76 0 1.47-.24 2.05-.65.2.22.45.4.74.53A5.5 5.5 0 0 0 12 22a5.5 5.5 0 0 0 5.4-4.5c.32-.14.6-.33.82-.57.58.41 1.29.65 2.05.65 1.93 0 3.5-1.57 3.5-3.5 0-1.5-.94-2.77-2.27-3.26.17-.5.27-.99.27-1.4a3 3 0 0 0-3-3c-.8 0-1.51.32-2.04.83A5.46 5.46 0 0 0 15 5a3 3 0 0 0-3-3z'/></svg>">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- ════════════════════════ NAVBAR ════════════════════════ -->
+<nav class="navbar" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="PetSphere Home">
+      <div class="nav-logo-icon">
+        <i data-lucide="paw-print" style="color:white;width:22px;height:22px;"></i>
+      </div>
+      <span class="nav-logo-text">Pet<em>Sphere</em></span>
+    </a>
+    <div class="nav-links" role="menubar">
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="pets.html" role="menuitem">Explore Pets</a>
+      <a href="favourites.html" role="menuitem">Favourites</a>
+      <a href="about.html" role="menuitem">About Us</a>
+      <a href="about.html#contact" role="menuitem">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="favourites.html" class="nav-fav-btn" aria-label="View favourites">
+        <i data-lucide="heart" style="color:var(--orange);width:20px;height:20px;"></i>
+        <span class="fav-count" id="fav-count-nav"></span>
+      </a>
+      <a href="pets.html" class="btn btn-primary btn-sm nav-cta" id="nav-adopt-btn">
+        <span>Adopt a Pet</span>
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" role="menu">
+  <a href="index.html" role="menuitem"><i data-lucide="home" style="width:16px;height:16px;margin-right:8px;"></i> Home</a>
+  <a href="pets.html" role="menuitem"><i data-lucide="paw-print" style="width:16px;height:16px;margin-right:8px;"></i> Explore Pets</a>
+  <a href="favourites.html" role="menuitem"><i data-lucide="heart" style="width:16px;height:16px;margin-right:8px;"></i> Favourites</a>
+  <a href="about.html" role="menuitem"><i data-lucide="info" style="width:16px;height:16px;margin-right:8px;"></i> About Us</a>
+  <a href="about.html#contact" role="menuitem"><i data-lucide="mail" style="width:16px;height:16px;margin-right:8px;"></i> Contact</a>
+  <a href="pets.html" class="btn btn-primary" style="margin-top:10px;justify-content:center;">
+    <span>Adopt a Pet</span>
+    <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+  </a>
+</div>
+
+<!-- ════════════════════════ HERO ════════════════════════ -->
+<section class="hero noise" id="hero" aria-label="Hero section">
+  <div class="blob-wrap" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="hero-inner">
+    <!-- ── Left Column ── -->
+    <div class="hero-content">
+      <div class="hero-eyebrow" aria-label="Platform tagline">
+        <i data-lucide="shield-check" style="color:var(--sage);width:15px;height:15px;"></i>
+        <span>India's Trusted Pet Adoption Platform</span>
+      </div>
+
+      <!-- MIXED FONT TITLE -->
+      <div class="hero-title-wrap" role="heading" aria-level="1">
+        <span class="hero-line-1">find your forever</span>
+        <span class="hero-line-2">Every Pet</span>
+        <span class="hero-line-3">Deserves</span>
+        <span class="hero-line-4">a <span>Loving</span> Home</span>
+      </div>
+
+      <p class="hero-desc">
+        Connect with adorable animals waiting for their forever families.
+        PetSphere makes responsible adoption simple, joyful, and 
+        meaningful — one perfect match at a time.
+      </p>
+
+      <div class="hero-btns">
+        <a href="pets.html" class="btn btn-primary btn-lg" id="hero-explore-btn">
+          <i data-lucide="compass" style="width:18px;height:18px;"></i>
+          <span>Explore Pets</span>
+        </a>
+        <a href="#how-it-works" class="btn btn-glass btn-lg" id="hero-how-btn">
+          <span>How It Works</span>
+          <i data-lucide="arrow-down" style="width:16px;height:16px;"></i>
+        </a>
+      </div>
+
+      <!-- Stats row with animated counters -->
+      <div class="hero-stats-row" aria-label="Platform statistics">
+        <div class="hero-stat">
+          <div class="stat-num"><span data-count="24" data-suffix="+">24+</span></div>
+          <div class="stat-label">Pets Available</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><span data-count="6">6</span></div>
+          <div class="stat-label">Categories</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><span data-count="98" data-suffix="K+">98K+</span></div>
+          <div class="stat-label">Happy Families</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><span data-count="4.9" data-suffix=" / 5.0">4.9 / 5.0</span></div>
+          <div class="stat-label">Trust Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Right Column: Visual ── -->
+    <div class="hero-visual">
+      <div class="hero-img-container">
+        <div class="hero-ring" aria-hidden="true"></div>
+
+        <div class="hero-img-wrap">
+          <img class="hero-img"
+               src="images/dogs/dog1_golden.jpg"
+               alt="Buddy — a beautiful golden retriever available for adoption at PetSphere"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80'">
+        </div>
+
+        <!-- Floating bento cards -->
+        <div class="float-card fc-1" aria-hidden="true">
+          <div class="fc-icon-wrap fc-green">
+            <i data-lucide="badge-check" style="color:var(--sage);width:20px;height:20px;"></i>
+          </div>
+          <div>
+            <div class="fc-title">Vet Verified</div>
+            <div class="fc-sub">Health checked & vaccinated</div>
+          </div>
+        </div>
+
+        <div class="float-card fc-2" aria-hidden="true">
+          <div class="fc-icon-wrap fc-orange">
+            <i data-lucide="heart" style="color:var(--orange);width:20px;height:20px;"></i>
+          </div>
+          <div>
+            <div class="fc-title">1,200+ Adoptions</div>
+            <div class="fc-sub">Successful matches this month</div>
+          </div>
+        </div>
+
+        <div class="float-card fc-3" aria-hidden="true">
+          <div><i data-lucide="shield" style="color:var(--sage);width:18px;height:18px;"></i></div>
+          <div>
+            <div class="fc-title" style="font-size:12px;">Zero Abandonment Pledge</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FEATURED PETS ════════════════════ -->
+<section class="section-pad featured-section" id="featured-pets" aria-label="Featured pets">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <span class="section-label">
+        <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+        Featured Companions
+      </span>
+      <h2 class="section-title">Meet Some <span class="serif">Wonderful</span> Friends</h2>
+      <p class="section-sub">Each of these amazing animals is patiently waiting for their perfect match. Could that be you?</p>
+    </div>
+    <div class="pets-grid" id="featured-grid"></div>
+    <div class="text-center" style="margin-top:48px;">
+      <a href="pets.html" class="btn btn-green btn-lg" id="view-all-btn">
+        <span>View All Pets</span>
+        <i data-lucide="arrow-right" style="width:18px;height:18px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CATEGORIES ════════════════════════ -->
+<section class="section-pad" id="categories" style="background:var(--cream-2);" aria-label="Pet categories">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <span class="section-label">
+        <i data-lucide="grid" style="width:14px;height:14px;"></i>
+        Browse by Category
+      </span>
+      <h2 class="section-title">Find Your Perfect <span class="serif">Companion</span></h2>
+      <p class="section-sub">Whatever kind of pet brings you joy — we have them waiting for you.</p>
+    </div>
+    <div class="categories-grid" id="categories-grid"></div>
+  </div>
+</section>
+
+<!-- ════════════════════ HOW IT WORKS ══════════════════════ -->
+<section class="section-pad steps-section noise" id="how-it-works" aria-label="Adoption process">
+  <div class="blob-wrap" aria-hidden="true">
+    <div class="blob blob-1" style="opacity:0.2;background:radial-gradient(circle,rgba(106,175,136,0.4),transparent 70%);"></div>
+  </div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="text-center" style="margin-bottom:56px;">
+      <span class="section-label" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.15);">
+        <i data-lucide="clipboard-list" style="width:14px;height:14px;"></i>
+        The Process
+      </span>
+      <h2 class="section-title" style="color:white;">
+        Adoption in <span style="font-family:'Playfair Display',serif;font-style:italic;color:var(--sage-light);">Three</span> Simple Steps
+      </h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.6);">Our thoughtful process connects loving families with their perfect pets.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <div class="step-icon-wrap">
+          <i data-lucide="search" style="color:white;width:28px;height:28px;"></i>
+        </div>
+        <h3 class="step-title">Browse & Discover</h3>
+        <p class="step-desc">Explore 24+ pets across 6 categories. Use smart filters to find animals that match your lifestyle, space, and experience level perfectly.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">2</div>
+        <div class="step-icon-wrap">
+          <i data-lucide="file-text" style="color:white;width:28px;height:28px;"></i>
+        </div>
+        <h3 class="step-title">Apply to Adopt</h3>
+        <p class="step-desc">Complete our thoughtful application. We ask about your home and lifestyle — not to exclude you, but to find the best possible match for you and your pet.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">3</div>
+        <div class="step-icon-wrap">
+          <i data-lucide="home" style="color:white;width:28px;height:28px;"></i>
+        </div>
+        <h3 class="step-title">Welcome Home!</h3>
+        <p class="step-desc">After approval, bring your new family member home. Our team provides ongoing guidance to help you and your pet settle in happily together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TESTIMONIALS ══════════════════════ -->
+<section class="section-pad" id="testimonials" style="background:var(--cream);" aria-label="Success stories">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <span class="section-label">
+        <i data-lucide="message-square-quote" style="width:14px;height:14px;"></i>
+        Success Stories
+      </span>
+      <h2 class="section-title">Happy Families, <span class="serif">Happy Pets</span></h2>
+      <p class="section-sub">Real stories from families who found their perfect companions through PetSphere.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="star-row" aria-label="5 star rating">
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+        </div>
+        <p class="testimonial-text">"Adopting Bruno through PetSphere was the best decision our family ever made. The process was smooth, the team incredibly supportive, and Bruno has brought so much joy into our home!"</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">
+            <i data-lucide="user" style="width:22px;height:22px;color:var(--sage);"></i>
+          </div>
+          <div>
+            <div class="t-name">Priya Sharma</div>
+            <div class="t-pet">Adopted Bruno the Beagle · Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="star-row" aria-label="5 star rating">
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+        </div>
+        <p class="testimonial-text">"I never thought I'd be a cat person until I met Luna. The detailed personality descriptions helped me find the perfect match. She's my little shadow now — I can't imagine life without her!"</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">
+            <i data-lucide="user" style="width:22px;height:22px;color:var(--sage);"></i>
+          </div>
+          <div>
+            <div class="t-name">Arjun Mehta</div>
+            <div class="t-pet">Adopted Luna the Persian · Bengaluru</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="star-row" aria-label="5 star rating">
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--orange);color:var(--orange);"></i>
+        </div>
+        <p class="testimonial-text">"Rio has completely transformed our household with his intelligence and humour. The care information on PetSphere was spot-on and helped us prepare perfectly for his arrival."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">
+            <i data-lucide="user" style="width:22px;height:22px;color:var(--sage);"></i>
+          </div>
+          <div>
+            <div class="t-name">Sneha Patel</div>
+            <div class="t-pet">Adopted Rio the Macaw · Hyderabad</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ MARQUEE TRUST BAR ═════════════════ -->
+<div style="background:var(--cream-2);padding:20px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);" aria-label="Trust indicators" aria-hidden="true">
+  <div id="marquee-track" style="display:flex;gap:48px;white-space:nowrap;animation:marquee 28s linear infinite;">
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="paw-print" style="width:16px;height:16px;color:var(--sage);"></i> 24+ Pets Available</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--sage);"></i> 100% Health Checked</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="heart" style="width:16px;height:16px;color:var(--orange);"></i> 98K+ Happy Families</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="globe" style="width:16px;height:16px;color:var(--sage);"></i> Pan-India Adoptions</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="shield-check" style="width:16px;height:16px;color:var(--sage);"></i> Vet Verified Profiles</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="sparkles" style="width:16px;height:16px;color:var(--orange);"></i> Dogs · Cats · Rabbits · Parrots · Fish · Turtles</span>
+    <!-- duplicate for seamless loop -->
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="paw-print" style="width:16px;height:16px;color:var(--sage);"></i> 24+ Pets Available</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--sage);"></i> 100% Health Checked</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="heart" style="width:16px;height:16px;color:var(--orange);"></i> 98K+ Happy Families</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="globe" style="width:16px;height:16px;color:var(--sage);"></i> Pan-India Adoptions</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="shield-check" style="width:16px;height:16px;color:var(--sage);"></i> Vet Verified Profiles</span>
+    <span style="font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:8px;"><i data-lucide="sparkles" style="width:16px;height:16px;color:var(--orange);"></i> Dogs · Cats · Rabbits · Parrots · Fish · Turtles</span>
+  </div>
+</div>
+<style>
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+</style>
+
+<!-- ════════════════════ CTA ════════════════════════════════ -->
+<section class="cta-section noise" id="cta" aria-label="Call to action">
+  <div class="blob-wrap" aria-hidden="true">
+    <div class="blob blob-1" style="opacity:0.15;"></div>
+    <div class="blob blob-2" style="opacity:0.1;"></div>
+  </div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:6px 18px;border-radius:999px;font-size:12px;color:rgba(255,255,255,0.8);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;">
+      <i data-lucide="sparkles" style="width:14px;height:14px;color:var(--orange-light);"></i>
+      <span>Start Your Journey</span>
+    </div>
+    <h2 class="cta-title">
+      Ready to Change a<br><span class="italic">Life?</span>
+    </h2>
+    <p class="cta-sub">Every adoption gives an animal a second chance at happiness. Start today and find the pet that was always meant for you.</p>
+    <div class="cta-btns">
+      <a href="pets.html" class="btn btn-white btn-lg" id="cta-explore-btn">
+        <i data-lucide="compass" style="width:18px;height:18px;color:var(--sage);"></i>
+        <span>Meet the Pets</span>
+      </a>
+      <a href="about.html" class="btn btn-outline-white btn-lg" id="cta-about-btn">
+        <span>Learn About Us</span>
+        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">
+            <i data-lucide="paw-print" style="color:white;width:20px;height:20px;"></i>
+          </div>
+          <div class="footer-brand-name">Pet<em>Sphere</em></div>
+        </div>
+        <p class="footer-desc">Connecting loving families with pets who need them most. We believe every animal deserves a safe, warm forever home.</p>
+        <div class="footer-social" aria-label="Social media">
+          <a href="#" aria-label="Facebook" title="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram" title="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Twitter" title="Twitter"><i data-lucide="twitter"></i></a>
+          <a href="#" aria-label="YouTube" title="YouTube"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigate</div>
+        <a href="index.html">Home</a>
+        <a href="pets.html">Explore Pets</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="adoption.html">Apply to Adopt</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Categories</div>
+        <a href="pets.html?cat=dogs">Dogs</a>
+        <a href="pets.html?cat=cats">Cats</a>
+        <a href="pets.html?cat=rabbits">Rabbits</a>
+        <a href="pets.html?cat=parrots">Parrots</a>
+        <a href="pets.html?cat=fish">Fish</a>
+        <a href="pets.html?cat=turtles">Turtles</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i data-lucide="map-pin" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>123 Green Park, Bandra West, Mumbai 400050</span></div>
+        <div class="footer-contact-item"><i data-lucide="phone" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i data-lucide="mail" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>hello@petsphere.in</span></div>
+        <div class="footer-contact-item"><i data-lucide="clock" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>Mon–Sat: 9 AM – 7 PM</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PetSphere — Dedicated to animal rescue and adoption welfare.</span>
+      <span>Demo Project · BCA College Assignment</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/pets.js"></script>
+<script src="js/main.js"></script>
+<script>
+const CATEGORY_META = [
+  { key:'dogs',    icon:'dog',     label:'Dogs',    link:'pets.html?cat=dogs'    },
+  { key:'cats',    icon:'cat',     label:'Cats',    link:'pets.html?cat=cats'    },
+  { key:'rabbits', icon:'rabbit',  label:'Rabbits', link:'pets.html?cat=rabbits' },
+  { key:'parrots', icon:'bird',    label:'Parrots', link:'pets.html?cat=parrots' },
+  { key:'fish',    icon:'fish',    label:'Fish',    link:'pets.html?cat=fish'    },
+  { key:'turtles', icon:'shield',  label:'Turtles', link:'pets.html?cat=turtles' }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderFeatured();
+  renderCategories();
+  setTimeout(() => {
+    initScrollReveal();
+    initTilt();
+    if (window.lucide) lucide.createIcons();
+  }, 100);
+});
+
+function renderFeatured() {
+  const featured = PETS.filter(p => p.featured).slice(0, 6);
+  document.getElementById('featured-grid').innerHTML = featured.map(buildPetCard).join('');
+}
+
+function renderCategories() {
+  const counts = getCategoryCounts();
+  document.getElementById('categories-grid').innerHTML = CATEGORY_META.map(c => `
+    <a href="${c.link}" class="category-card reveal" id="cat-${c.key}" aria-label="Browse ${c.label} — ${counts[c.key]} available">
+      <div class="cat-icon-wrap" style="background:var(--sage-pale);display:flex;align-items:center;justify-content:center;">
+        <i data-lucide="${c.icon}" style="width:34px;height:34px;color:var(--sage);"></i>
+      </div>
+      <div class="cat-name">${c.label}</div>
+      <div class="cat-count">${counts[c.key]} available</div>
+    </a>`).join('');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View detailed information about pets available for adoption at PetSphere.">
+  <title>Pet Details — PetSphere</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233D7A5C'><path d='M12 2a3 3 0 0 0-3 3c0 .44.1 1.05.29 1.57A3.5 3.5 0 0 0 7 10c0 1.93 1.57 3.5 3.5 3.5.76 0 1.47-.24 2.05-.65.2.22.45.4.74.53A5.5 5.5 0 0 0 12 22a5.5 5.5 0 0 0 5.4-4.5c.32-.14.6-.33.82-.57.58.41 1.29.65 2.05.65 1.93 0 3.5-1.57 3.5-3.5 0-1.5-.94-2.77-2.27-3.26.17-.5.27-.99.27-1.4a3 3 0 0 0-3-3c-.8 0-1.51.32-2.04.83A5.46 5.46 0 0 0 15 5a3 3 0 0 0-3-3z'/></svg>">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- ── Navbar ───────────────────────────────────────────── -->
+<nav class="navbar" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="PetSphere Home">
+      <div class="nav-logo-icon">
+        <i data-lucide="paw-print" style="color:white;width:22px;height:22px;"></i>
+      </div>
+      <span class="nav-logo-text">Pet<em>Sphere</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pets.html">Explore Pets</a>
+      <a href="favourites.html">Favourites</a>
+      <a href="about.html">About Us</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="favourites.html" class="nav-fav-btn" aria-label="View favourites">
+        <i data-lucide="heart" style="color:var(--orange);width:20px;height:20px;"></i>
+        <span class="fav-count" id="fav-count-nav"></span>
+      </a>
+      <a href="pets.html" class="btn btn-primary btn-sm nav-cta">
+        <span>Adopt a Pet</span>
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"><i data-lucide="home" style="width:16px;height:16px;margin-right:8px;"></i> Home</a>
+  <a href="pets.html"><i data-lucide="paw-print" style="width:16px;height:16px;margin-right:8px;"></i> Explore Pets</a>
+  <a href="favourites.html"><i data-lucide="heart" style="width:16px;height:16px;margin-right:8px;"></i> Favourites</a>
+  <a href="about.html"><i data-lucide="info" style="width:16px;height:16px;margin-right:8px;"></i> About Us</a>
+  <a href="about.html#contact"><i data-lucide="mail" style="width:16px;height:16px;margin-right:8px;"></i> Contact</a>
+</div>
+
+<!-- ── Pet Details Content ───────────────────────────────── -->
+<div class="page-pad-top" id="pet-details-wrap">
+  <!-- Injected by JS -->
+</div>
+
+<!-- ── Similar Pets ──────────────────────────────────────── -->
+<section class="similar-section" id="similar-section" style="display:none;" aria-label="Similar pets">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:36px;">
+      <span class="section-label">
+        <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+        You May Also Like
+      </span>
+      <h2 class="section-title" style="font-size:1.8rem;">Similar <span class="serif">Friends</span></h2>
+    </div>
+    <div class="pets-grid" id="similar-grid"></div>
+    <div class="text-center" style="margin-top:32px;">
+      <a href="pets.html" class="btn btn-green">
+        <span>View All Pets</span>
+        <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">
+            <i data-lucide="paw-print" style="color:white;width:20px;height:20px;"></i>
+          </div>
+          <div class="footer-brand-name">Pet<em>Sphere</em></div>
+        </div>
+        <p class="footer-desc">Connecting loving families with pets who need them most.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <a href="index.html">Home</a>
+        <a href="pets.html">Explore Pets</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="adoption.html">Apply to Adopt</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Categories</div>
+        <a href="pets.html?cat=dogs">Dogs</a>
+        <a href="pets.html?cat=cats">Cats</a>
+        <a href="pets.html?cat=rabbits">Rabbits</a>
+        <a href="pets.html?cat=parrots">Parrots</a>
+        <a href="pets.html?cat=fish">Fish</a>
+        <a href="pets.html?cat=turtles">Turtles</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i data-lucide="phone" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i data-lucide="mail" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>hello@petsphere.in</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 PetSphere. Dedicated to animal rescue.</span>
+      <span>Demo project — BCA College Assignment</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/pets.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ── Pet Details Page Script ──────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const pet = id ? getPetById(id) : null;
+
+  if (!pet) {
+    renderNotFound();
+    return;
+  }
+  renderDetails(pet);
+  renderSimilar(pet);
+  document.title = `${pet.name} — PetSphere`;
+  if (window.lucide) lucide.createIcons();
+});
+
+function renderDetails(pet) {
+  const fav = isFavourite(pet.id);
+  const statusClass = pet.status === 'Available' ? 'badge-status-available' : 'badge-status-pending';
+  const vaccBadge = pet.vaccinationStatus === 'N/A'
+    ? `<span class="vacc-badge" style="background:#f0f0f0;color:#666;display:inline-flex;align-items:center;gap:6px;"><i data-lucide="info" style="width:14px;height:14px;"></i> Not Applicable</span>`
+    : `<span class="vacc-badge vacc-yes" style="display:inline-flex;align-items:center;gap:6px;"><i data-lucide="check-circle" style="width:14px;height:14px;"></i> ${pet.vaccinationStatus}</span>`;
+
+  const personalityTags = pet.personality
+    .map(t => `<span class="personality-tag">${t}</span>`).join('');
+  const careItems = pet.careRequirements
+    .map(c => `<li>${c}</li>`).join('');
+
+  document.getElementById('pet-details-wrap').innerHTML = `
+    <section class="page-hero" aria-label="Pet breadcrumb">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="pets.html">Explore Pets</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="pets.html?cat=${pet.category}">${capitalise(pet.category)}</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>${pet.name}</span>
+        </div>
+        <h1 class="page-hero-title">${pet.name}</h1>
+        <p class="page-hero-sub">${pet.breed} · ${pet.ageLabel} · ${pet.location}</p>
+      </div>
+    </section>
+
+    <section class="pet-details-section" aria-label="Pet details" style="padding:48px 0 80px;">
+      <div class="container">
+        <div class="pet-details-grid">
+          <!-- Image -->
+          <div class="pet-details-img-col">
+            <div class="pet-details-img-wrap" style="border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-hover);">
+              <img class="pet-details-img"
+                   src="${pet.image}"
+                   alt="${pet.name} — ${pet.breed}"
+                   id="pet-main-img"
+                   onerror="this.onerror=null;this.src='${pet.fallback}'">
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="pet-details-info">
+            <div class="pet-badges-row" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+              <span class="detail-badge badge-cat">${capitalise(pet.category.slice(0,-1))}</span>
+              <span class="detail-badge badge-gender">${pet.gender}</span>
+              <span class="detail-badge ${statusClass}">${pet.status}</span>
+            </div>
+
+            <h2 class="pet-details-name" style="font-size:2.4rem;font-weight:900;color:var(--char);margin-bottom:6px;">${pet.name}</h2>
+            <p class="pet-details-breed" style="font-size:1.1rem;color:var(--sage);font-weight:600;margin-bottom:24px;">${pet.breed}</p>
+
+            <div class="pet-info-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;background:var(--cream);padding:20px;border-radius:var(--r-lg);margin-bottom:28px;border:1px solid var(--border);">
+              <div class="pet-info-item">
+                <div class="pet-info-label" style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;">Age</div>
+                <div class="pet-info-value" style="font-weight:700;color:var(--char);margin-top:2px;">${pet.ageLabel}</div>
+              </div>
+              <div class="pet-info-item">
+                <div class="pet-info-label" style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;">Gender</div>
+                <div class="pet-info-value" style="font-weight:700;color:var(--char);margin-top:2px;">${pet.gender}</div>
+              </div>
+              <div class="pet-info-item">
+                <div class="pet-info-label" style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;">Location</div>
+                <div class="pet-info-value" style="font-weight:700;color:var(--char);margin-top:2px;">${pet.location}</div>
+              </div>
+              <div class="pet-info-item">
+                <div class="pet-info-label" style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;">Category</div>
+                <div class="pet-info-value" style="font-weight:700;color:var(--char);margin-top:2px;">${capitalise(pet.category)}</div>
+              </div>
+            </div>
+
+            <h3 class="pet-section-title" style="font-size:1.1rem;font-weight:800;color:var(--char);margin:24px 0 8px;">About ${pet.name}</h3>
+            <p class="pet-desc" style="color:var(--body);line-height:1.75;margin-bottom:20px;font-family:'DM Sans',sans-serif;">${pet.description}</p>
+
+            <h3 class="pet-section-title" style="font-size:1.1rem;font-weight:800;color:var(--char);margin:24px 0 10px;">Personality & Traits</h3>
+            <div class="personality-tags" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">${personalityTags}</div>
+
+            <h3 class="pet-section-title" style="font-size:1.1rem;font-weight:800;color:var(--char);margin:24px 0 8px;">Suitable For</h3>
+            <p class="pet-desc" style="color:var(--body);line-height:1.75;margin-bottom:20px;font-family:'DM Sans',sans-serif;">${pet.suitableFor}</p>
+
+            <h3 class="pet-section-title" style="font-size:1.1rem;font-weight:800;color:var(--char);margin:24px 0 10px;">Care Requirements</h3>
+            <ul class="care-list" style="margin-bottom:24px;padding-left:20px;line-height:1.8;color:var(--body);font-family:'DM Sans',sans-serif;">${careItems}</ul>
+
+            <h3 class="pet-section-title" style="font-size:1.1rem;font-weight:800;color:var(--char);margin:24px 0 8px;">Health & Vaccination</h3>
+            <div style="margin-bottom:24px;">${vaccBadge}</div>
+
+            <h3 class="pet-section-title" style="font-size:1.1rem;font-weight:800;color:var(--char);margin:24px 0 8px;">Adoption Requirements</h3>
+            <p class="pet-desc" style="color:var(--body);line-height:1.75;margin-bottom:32px;font-family:'DM Sans',sans-serif;">${pet.adoptionRequirements}</p>
+
+            <div class="details-actions" style="display:flex;gap:14px;flex-wrap:wrap;">
+              <a href="adoption.html?pet=${pet.id}" class="btn btn-primary btn-lg" id="adopt-btn-detail">
+                <i data-lucide="check-circle" style="width:18px;height:18px;"></i>
+                <span>Apply to Adopt ${pet.name}</span>
+              </a>
+              <button class="btn ${fav ? 'btn-danger' : 'btn-glass'} btn-lg"
+                      id="fav-detail-btn"
+                      onclick="toggleDetailFav('${pet.id}')">
+                <i data-lucide="heart" style="width:18px;height:18px;"></i>
+                <span id="fav-btn-label">${fav ? 'Remove Favourite' : 'Save to Favourites'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
+function toggleDetailFav(id) {
+  const added = !isFavourite(id);
+  toggleFavourite(id);
+  const btn = document.getElementById('fav-detail-btn');
+  const label = document.getElementById('fav-btn-label');
+  if (btn && label) {
+    btn.className = `btn ${added ? 'btn-danger' : 'btn-glass'} btn-lg`;
+    label.textContent = added ? 'Remove Favourite' : 'Save to Favourites';
+  }
+}
+
+function renderSimilar(pet) {
+  const similar = getSimilarPets(pet, 3);
+  if (similar.length === 0) return;
+  const section = document.getElementById('similar-section');
+  const grid = document.getElementById('similar-grid');
+  section.style.display = '';
+  grid.innerHTML = similar.map(buildPetCard).join('');
+  setTimeout(() => {
+    initScrollReveal();
+    initTilt();
+  }, 50);
+}
+
+function renderNotFound() {
+  document.getElementById('pet-details-wrap').innerHTML = `
+    <div style="padding-top:72px;">
+      <div class="page-hero">
+        <div class="container">
+          <h1 class="page-hero-title">Pet Not Found</h1>
+        </div>
+      </div>
+      <div class="container" style="padding:80px 24px;text-align:center;">
+        <div style="width:80px;height:80px;background:var(--sage-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+          <i data-lucide="help-circle" style="width:40px;height:40px;color:var(--sage);"></i>
+        </div>
+        <h2 style="color:var(--char);margin-bottom:12px;font-size:1.8rem;font-weight:800;">We couldn't find this pet profile</h2>
+        <p style="color:var(--muted);margin-bottom:28px;font-family:'DM Sans',sans-serif;">This animal may have already found a forever home, or the link may be outdated.</p>
+        <a href="pets.html" class="btn btn-green btn-lg">Explore Available Pets</a>
+      </div>
+    </div>`;
+  if (window.lucide) lucide.createIcons();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply to adopt a pet from PetSphere. Fill out our adoption application form to start your journey to pet ownership.">
+  <title>Adoption Application — PetSphere</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233D7A5C'><path d='M12 2a3 3 0 0 0-3 3c0 .44.1 1.05.29 1.57A3.5 3.5 0 0 0 7 10c0 1.93 1.57 3.5 3.5 3.5.76 0 1.47-.24 2.05-.65.2.22.45.4.74.53A5.5 5.5 0 0 0 12 22a5.5 5.5 0 0 0 5.4-4.5c.32-.14.6-.33.82-.57.58.41 1.29.65 2.05.65 1.93 0 3.5-1.57 3.5-3.5 0-1.5-.94-2.77-2.27-3.26.17-.5.27-.99.27-1.4a3 3 0 0 0-3-3c-.8 0-1.51.32-2.04.83A5.46 5.46 0 0 0 15 5a3 3 0 0 0-3-3z'/></svg>">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- ── Navbar ───────────────────────────────────────────── -->
+<nav class="navbar" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="PetSphere Home">
+      <div class="nav-logo-icon">
+        <i data-lucide="paw-print" style="color:white;width:22px;height:22px;"></i>
+      </div>
+      <span class="nav-logo-text">Pet<em>Sphere</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pets.html">Explore Pets</a>
+      <a href="favourites.html">Favourites</a>
+      <a href="about.html">About Us</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="favourites.html" class="nav-fav-btn" aria-label="View favourites">
+        <i data-lucide="heart" style="color:var(--orange);width:20px;height:20px;"></i>
+        <span class="fav-count" id="fav-count-nav"></span>
+      </a>
+      <a href="pets.html" class="btn btn-primary btn-sm nav-cta">
+        <span>Adopt a Pet</span>
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"><i data-lucide="home" style="width:16px;height:16px;margin-right:8px;"></i> Home</a>
+  <a href="pets.html"><i data-lucide="paw-print" style="width:16px;height:16px;margin-right:8px;"></i> Explore Pets</a>
+  <a href="favourites.html"><i data-lucide="heart" style="width:16px;height:16px;margin-right:8px;"></i> Favourites</a>
+  <a href="about.html"><i data-lucide="info" style="width:16px;height:16px;margin-right:8px;"></i> About Us</a>
+  <a href="about.html#contact"><i data-lucide="mail" style="width:16px;height:16px;margin-right:8px;"></i> Contact</a>
+</div>
+
+<!-- ── Page Hero ─────────────────────────────────────────── -->
+<div class="page-pad-top">
+  <section class="page-hero" aria-label="Adoption application header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="pets.html">Explore Pets</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Adoption Application</span>
+      </div>
+      <h1 class="page-hero-title">Adoption <span class="serif">Application</span></h1>
+      <p class="page-hero-sub">Take the first step towards welcoming a new family member. We review every application with care.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ── Main ───────────────────────────────────────────────── -->
+<section style="background:var(--cream-2);padding:60px 0 100px;">
+  <div class="container">
+    <div class="adoption-layout" id="adoption-layout">
+
+      <!-- Form -->
+      <div class="form-card" id="form-card">
+        <h2 class="form-card-title">Tell Us About Yourself</h2>
+        <p class="form-card-sub">Please fill in all required fields so we can ensure the happiest, most suitable match for both you and your pet.</p>
+
+        <form id="adoption-form" novalidate aria-label="Adoption application form">
+
+          <!-- Personal Info -->
+          <div class="form-sec-title">
+            <i data-lucide="user" style="width:16px;height:16px;color:var(--sage);"></i>
+            <span>Personal Information</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fullname">Full Name <span class="req">*</span></label>
+              <input type="text" id="fullname" name="fullname" class="form-control" placeholder="e.g. Priya Sharma" required autocomplete="name">
+              <span class="field-error" id="fullname-err" role="alert">Please enter your full name.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required autocomplete="email">
+              <span class="field-error" id="email-err" role="alert">Please enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765 43210" required autocomplete="tel">
+              <span class="field-error" id="phone-err" role="alert">Please enter a valid 10-digit phone number.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">City / Location <span class="req">*</span></label>
+              <input type="text" id="city" name="city" class="form-control" placeholder="Mumbai, Maharashtra" required>
+              <span class="field-error" id="city-err" role="alert">Please enter your city.</span>
+            </div>
+          </div>
+
+          <!-- Pet Selection -->
+          <div class="form-sec-title">
+            <i data-lucide="paw-print" style="width:16px;height:16px;color:var(--sage);"></i>
+            <span>Pet & Living Situation</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="pet-select">Pet You'd Like to Adopt <span class="req">*</span></label>
+              <select id="pet-select" name="pet" class="form-control" required>
+                <option value="">— Select a pet —</option>
+              </select>
+              <span class="field-error" id="pet-err" role="alert">Please select a pet.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="living">Living Situation <span class="req">*</span></label>
+              <select id="living" name="living" class="form-control" required>
+                <option value="">— Select —</option>
+                <option value="apartment">Apartment (no yard)</option>
+                <option value="house-small">House — small yard</option>
+                <option value="house-large">House — large yard</option>
+                <option value="farm">Farm / Rural property</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error" id="living-err" role="alert">Please select your living situation.</span>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="form-sec-title">
+            <i data-lucide="shield-check" style="width:16px;height:16px;color:var(--sage);"></i>
+            <span>Experience & Care Background</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="experience">Previous Pet-Care Experience <span class="req">*</span></label>
+            <select id="experience" name="experience" class="form-control" required>
+              <option value="">— Select —</option>
+              <option value="none">No experience — this is my first pet</option>
+              <option value="some">Some experience with small pets</option>
+              <option value="moderate">Moderate — I've owned pets before</option>
+              <option value="experienced">Experienced pet owner</option>
+              <option value="professional">Professional / Veterinary background</option>
+            </select>
+            <span class="field-error" id="experience-err" role="alert">Please select your experience level.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="other-pets">Do You Have Other Pets at Home?</label>
+            <select id="other-pets" name="other-pets" class="form-control">
+              <option value="none">No other pets</option>
+              <option value="dogs">Yes — dogs</option>
+              <option value="cats">Yes — cats</option>
+              <option value="multiple">Yes — multiple species</option>
+              <option value="other-pet">Yes — other animals</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reason">Why Do You Want to Adopt This Pet? <span class="req">*</span></label>
+            <textarea id="reason" name="reason" class="form-control" rows="4" placeholder="Tell us a little about why you'd like to adopt this pet and what kind of home you can offer…" required></textarea>
+            <span class="field-error" id="reason-err" role="alert">Please tell us why you'd like to adopt (at least 30 characters).</span>
+          </div>
+
+          <!-- Agreement -->
+          <div class="form-sec-title">
+            <i data-lucide="file-check" style="width:16px;height:16px;color:var(--sage);"></i>
+            <span>Responsible Adoption Agreement</span>
+          </div>
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="agree-care" name="agree-care" required>
+              <label for="agree-care">I agree to provide proper nutrition, safe shelter, veterinary care, and lifelong companionship to my adopted pet.</label>
+            </div>
+            <span class="field-error" id="agree-care-err" role="alert">You must agree to provide proper care.</span>
+          </div>
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="agree-return" name="agree-return">
+              <label for="agree-return">I understand that if circumstances ever change, I will contact PetSphere rather than abandoning or re-homing without notice.</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="agree-demo" name="agree-demo" required>
+              <label for="agree-demo">I acknowledge this is a <strong>demo project application</strong> for a BCA college assignment. No real legal transaction occurs.</label>
+            </div>
+            <span class="field-error" id="agree-demo-err" role="alert">Please acknowledge the demo notice.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" id="submit-adoption-btn" style="width:100%;justify-content:center;margin-top:12px;">
+            <i data-lucide="send" style="width:18px;height:18px;"></i>
+            <span>Submit Adoption Application</span>
+          </button>
+        </form>
+
+        <!-- Success Banner -->
+        <div class="success-banner" id="success-banner" role="alert" aria-live="polite">
+          <div class="success-banner-icon" style="display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+            <i data-lucide="check-circle" style="width:48px;height:48px;color:#1A6B30;"></i>
+          </div>
+          <h3>Application Submitted Successfully!</h3>
+          <p id="success-msg-text">Thank you! Your demo application has been recorded in your local browser. In a real shelter, our team would review it within 2–3 working days and reach out by email.</p>
+          <a href="pets.html" class="btn btn-green" style="margin-top:20px;">
+            <span>Browse More Pets</span>
+            <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="adoption-sidebar" id="adoption-sidebar" aria-label="Adoption information">
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">
+            <i data-lucide="list-ordered" style="width:16px;height:16px;color:var(--sage);"></i>
+            <span>What Happens Next?</span>
+          </div>
+          <ul class="sidebar-list">
+            <li>Our team reviews your submission within 2–3 working days</li>
+            <li>We may contact you for a brief telephone consultation</li>
+            <li>A virtual or physical home check is arranged if appropriate</li>
+            <li>Meet-and-greet is scheduled with your selected pet</li>
+            <li>Adoption agreement signed & transition guidance provided</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card" id="selected-pet-card" style="display:none;">
+          <div class="sidebar-card-title">
+            <i data-lucide="heart" style="width:16px;height:16px;color:var(--orange);"></i>
+            <span>Selected Companion</span>
+          </div>
+          <div id="selected-pet-preview"></div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">
+            <i data-lucide="check-square" style="width:16px;height:16px;color:var(--sage);"></i>
+            <span>Adopter Checklist</span>
+          </div>
+          <ul class="sidebar-list">
+            <li>Prepare a comfortable, quiet sleeping area</li>
+            <li>Budget for monthly food, preventive care, and toys</li>
+            <li>Ensure agreement among all family members</li>
+            <li>Secure balconies, yards, and toxic household substances</li>
+            <li>Identify a qualified local veterinarian</li>
+          </ul>
+        </div>
+
+        <div class="demo-notice" role="note">
+          <strong>Academic Demo Notice</strong>
+          This application form is a demonstration created for a BCA college semester project. No data is transmitted to an external server. Applications are stored in browser localStorage only.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">
+            <i data-lucide="paw-print" style="color:white;width:20px;height:20px;"></i>
+          </div>
+          <div class="footer-brand-name">Pet<em>Sphere</em></div>
+        </div>
+        <p class="footer-desc">Connecting loving families with pets who need them most.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <a href="index.html">Home</a>
+        <a href="pets.html">Explore Pets</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Categories</div>
+        <a href="pets.html?cat=dogs">Dogs</a>
+        <a href="pets.html?cat=cats">Cats</a>
+        <a href="pets.html?cat=rabbits">Rabbits</a>
+        <a href="pets.html?cat=fish">Fish</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i data-lucide="phone" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i data-lucide="mail" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>hello@petsphere.in</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 PetSphere. Dedicated to ethical animal adoption.</span>
+      <span>Demo project — BCA College Assignment</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/pets.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ── Adoption Page Script ─────────────────────────────────── */
+const APPS_KEY = 'petsphere_applications';
+
+document.addEventListener('DOMContentLoaded', () => {
+  populatePetSelect();
+
+  const params = new URLSearchParams(location.search);
+  const preselectId = params.get('pet');
+  if (preselectId) {
+    const sel = document.getElementById('pet-select');
+    sel.value = preselectId;
+    showPetPreview();
+  }
+
+  document.getElementById('pet-select').addEventListener('change', showPetPreview);
+  document.getElementById('adoption-form').addEventListener('submit', handleSubmit);
+  if (window.lucide) lucide.createIcons();
+});
+
+function populatePetSelect() {
+  const sel = document.getElementById('pet-select');
+  PETS.forEach(pet => {
+    const opt = document.createElement('option');
+    opt.value = pet.id;
+    opt.textContent = `${pet.name} — ${pet.breed} (${capitalise(pet.category)})`;
+    sel.appendChild(opt);
+  });
+}
+
+function showPetPreview() {
+  const sel = document.getElementById('pet-select');
+  const petId = sel.value;
+  const card = document.getElementById('selected-pet-card');
+  const preview = document.getElementById('selected-pet-preview');
+
+  if (!petId) { card.style.display = 'none'; return; }
+  const pet = getPetById(petId);
+  if (!pet) return;
+
+  card.style.display = '';
+  preview.innerHTML = `
+    <div style="display:flex;gap:12px;align-items:flex-start;margin-top:8px;">
+      <img src="${pet.image}" alt="${pet.name}"
+           onerror="this.onerror=null;this.src='${pet.fallback}'"
+           style="width:72px;height:72px;border-radius:12px;object-fit:cover;flex-shrink:0;">
+      <div>
+        <div style="font-weight:700;color:var(--char);font-size:15px;">${pet.name}</div>
+        <div style="font-size:12px;color:var(--muted);">${pet.breed}</div>
+        <div style="font-size:12px;margin-top:4px;">${pet.ageLabel} · ${pet.gender}</div>
+        <div style="font-size:11px;color:var(--sage);font-weight:600;margin-top:4px;display:flex;align-items:center;gap:4px;">
+          <i data-lucide="map-pin" style="width:12px;height:12px;"></i>
+          <span>${pet.location}</span>
+        </div>
+      </div>
+    </div>`;
+  if (window.lucide) lucide.createIcons();
+}
+
+function setError(id, show) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle('show', show);
+  const inputId = id.replace('-err', '');
+  const input = document.getElementById(inputId);
+  if (input) input.classList.toggle('is-error', show);
+}
+
+function validateForm() {
+  let valid = true;
+
+  const fullname = document.getElementById('fullname').value.trim();
+  if (fullname.length < 2) { setError('fullname-err', true); valid = false; }
+  else setError('fullname-err', false);
+
+  const email = document.getElementById('email').value.trim();
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) { setError('email-err', true); valid = false; }
+  else setError('email-err', false);
+
+  const phone = document.getElementById('phone').value.replace(/\D/g, '');
+  if (phone.length < 10) { setError('phone-err', true); valid = false; }
+  else setError('phone-err', false);
+
+  const city = document.getElementById('city').value.trim();
+  if (!city) { setError('city-err', true); valid = false; }
+  else setError('city-err', false);
+
+  const pet = document.getElementById('pet-select').value;
+  if (!pet) { setError('pet-err', true); valid = false; }
+  else setError('pet-err', false);
+
+  const living = document.getElementById('living').value;
+  if (!living) { setError('living-err', true); valid = false; }
+  else setError('living-err', false);
+
+  const exp = document.getElementById('experience').value;
+  if (!exp) { setError('experience-err', true); valid = false; }
+  else setError('experience-err', false);
+
+  const reason = document.getElementById('reason').value.trim();
+  if (reason.length < 30) { setError('reason-err', true); valid = false; }
+  else setError('reason-err', false);
+
+  const agreeCare = document.getElementById('agree-care').checked;
+  if (!agreeCare) { setError('agree-care-err', true); valid = false; }
+  else setError('agree-care-err', false);
+
+  const agreeDemo = document.getElementById('agree-demo').checked;
+  if (!agreeDemo) { setError('agree-demo-err', true); valid = false; }
+  else setError('agree-demo-err', false);
+
+  return valid;
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  if (!validateForm()) {
+    document.querySelector('.is-error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  const petId = document.getElementById('pet-select').value;
+  const pet = getPetById(petId);
+
+  const apps = JSON.parse(localStorage.getItem(APPS_KEY) || '[]');
+  apps.push({
+    id: Date.now(),
+    petId,
+    petName: pet ? pet.name : petId,
+    fullname: document.getElementById('fullname').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    city: document.getElementById('city').value,
+    date: new Date().toISOString()
+  });
+  localStorage.setItem(APPS_KEY, JSON.stringify(apps));
+
+  document.getElementById('adoption-form').style.display = 'none';
+  const banner = document.getElementById('success-banner');
+  banner.classList.add('show');
+  if (pet) {
+    document.getElementById('success-msg-text').textContent =
+      `Thank you for applying to adopt ${pet.name}! In an operational shelter, our welfare coordinators would evaluate your home environment and connect with you directly. Your application has been logged to localStorage.`;
+  }
+  banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  showToast('Application logged successfully!');
+  if (window.lucide) lucide.createIcons();
+}
+</script>
+</body>
+</html>

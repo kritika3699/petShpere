@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about PetSphere's mission, our adoption process, responsible pet ownership, and get in touch with our team.">
+  <title>About Us & Contact — PetSphere</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233D7A5C'><path d='M12 2a3 3 0 0 0-3 3c0 .44.1 1.05.29 1.57A3.5 3.5 0 0 0 7 10c0 1.93 1.57 3.5 3.5 3.5.76 0 1.47-.24 2.05-.65.2.22.45.4.74.53A5.5 5.5 0 0 0 12 22a5.5 5.5 0 0 0 5.4-4.5c.32-.14.6-.33.82-.57.58.41 1.29.65 2.05.65 1.93 0 3.5-1.57 3.5-3.5 0-1.5-.94-2.77-2.27-3.26.17-.5.27-.99.27-1.4a3 3 0 0 0-3-3c-.8 0-1.51.32-2.04.83A5.46 5.46 0 0 0 15 5a3 3 0 0 0-3-3z'/></svg>">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- ── Navbar ───────────────────────────────────────────── -->
+<nav class="navbar" id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="PetSphere Home">
+      <div class="nav-logo-icon">
+        <i data-lucide="paw-print" style="color:white;width:22px;height:22px;"></i>
+      </div>
+      <span class="nav-logo-text">Pet<em>Sphere</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pets.html">Explore Pets</a>
+      <a href="favourites.html">Favourites</a>
+      <a href="about.html">About Us</a>
+      <a href="about.html#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="favourites.html" class="nav-fav-btn" aria-label="View favourites">
+        <i data-lucide="heart" style="color:var(--orange);width:20px;height:20px;"></i>
+        <span class="fav-count" id="fav-count-nav"></span>
+      </a>
+      <a href="pets.html" class="btn btn-primary btn-sm nav-cta">
+        <span>Adopt a Pet</span>
+        <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html"><i data-lucide="home" style="width:16px;height:16px;margin-right:8px;"></i> Home</a>
+  <a href="pets.html"><i data-lucide="paw-print" style="width:16px;height:16px;margin-right:8px;"></i> Explore Pets</a>
+  <a href="favourites.html"><i data-lucide="heart" style="width:16px;height:16px;margin-right:8px;"></i> Favourites</a>
+  <a href="about.html"><i data-lucide="info" style="width:16px;height:16px;margin-right:8px;"></i> About Us</a>
+  <a href="about.html#contact"><i data-lucide="mail" style="width:16px;height:16px;margin-right:8px;"></i> Contact</a>
+</div>
+
+<!-- ── About Hero ─────────────────────────────────────────── -->
+<div class="page-pad-top">
+  <section class="about-hero" aria-label="About PetSphere">
+    <div class="container">
+      <div class="about-hero-grid">
+        <div class="about-hero-content">
+          <span class="section-label">
+            <i data-lucide="heart" style="width:14px;height:14px;"></i>
+            Our Mission
+          </span>
+          <h1 class="about-hero-title">
+            We Believe <span>Every Animal</span><br>Deserves Love
+          </h1>
+          <p style="font-size:1.05rem;color:var(--body);line-height:1.75;margin-bottom:28px;font-family:'DM Sans',sans-serif;">
+            PetSphere is a passionate initiative dedicated to connecting animals in need with responsible, caring families. We champion ethical adoption over buying, and believe that every life — human or animal — is enriched by this beautiful bond.
+          </p>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="pets.html" class="btn btn-primary btn-lg" id="about-explore-btn">
+              <i data-lucide="compass" style="width:18px;height:18px;"></i>
+              <span>Adopt a Pet</span>
+            </a>
+            <a href="#contact" class="btn btn-glass btn-lg" id="about-contact-btn">
+              <i data-lucide="mail" style="width:18px;height:18px;"></i>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="about-img-wrap">
+            <img class="about-img"
+                 src="images/cats/cat1_tabby.jpg"
+                 alt="A happy cat in a loving home — the PetSphere mission"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=800&q=80'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── Mission Cards ──────────────────────────────────────── -->
+<section class="section-pad" style="background:var(--cream-2);" aria-label="Our values">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label">
+        <i data-lucide="shield-check" style="width:14px;height:14px;"></i>
+        Why We Exist
+      </span>
+      <h2 class="section-title">Our Core <span class="serif">Values</span></h2>
+      <p class="section-sub">Everything we do is guided by a simple belief: animals and people are better together.</p>
+    </div>
+    <div class="mission-cards">
+      <div class="mission-card reveal">
+        <div class="step-icon-wrap" style="margin:0 0 16px;background:var(--sage-pale);border-color:var(--border);">
+          <i data-lucide="home" style="width:24px;height:24px;color:var(--sage);"></i>
+        </div>
+        <h3 class="mission-title">Homes Over Cages</h3>
+        <p class="mission-desc">We work tirelessly to ensure every pet finds a loving forever home rather than remaining in a shelter. A cage is never a home — it's a waiting room.</p>
+      </div>
+      <div class="mission-card reveal reveal-delay-1">
+        <div class="step-icon-wrap" style="margin:0 0 16px;background:var(--orange-pale);border-color:var(--border);">
+          <i data-lucide="heart" style="width:24px;height:24px;color:var(--orange);"></i>
+        </div>
+        <h3 class="mission-title">Responsible Adoption</h3>
+        <p class="mission-desc">We screen adopters carefully not to be gatekeepers, but to ensure the best outcomes for both animal and human. The right match changes everything.</p>
+      </div>
+      <div class="mission-card reveal reveal-delay-2">
+        <div class="step-icon-wrap" style="margin:0 0 16px;background:var(--sage-pale);border-color:var(--border);">
+          <i data-lucide="book-open" style="width:24px;height:24px;color:var(--sage);"></i>
+        </div>
+        <h3 class="mission-title">Education & Guidance</h3>
+        <p class="mission-desc">We educate adopters on proper care, health, and behaviour so every pet thrives long after they leave our platform. Knowledge is compassion in action.</p>
+      </div>
+      <div class="mission-card reveal reveal-delay-1">
+        <div class="step-icon-wrap" style="margin:0 0 16px;background:var(--sage-pale);border-color:var(--border);">
+          <i data-lucide="shield" style="width:24px;height:24px;color:var(--sage);"></i>
+        </div>
+        <h3 class="mission-title">Adopt, Don't Shop</h3>
+        <p class="mission-desc">Millions of healthy animals await homes in shelters. Choosing to adopt saves a life and challenges unethical breeding industries.</p>
+      </div>
+      <div class="mission-card reveal reveal-delay-2">
+        <div class="step-icon-wrap" style="margin:0 0 16px;background:var(--orange-pale);border-color:var(--border);">
+          <i data-lucide="activity" style="width:24px;height:24px;color:var(--orange);"></i>
+        </div>
+        <h3 class="mission-title">Health & Welfare First</h3>
+        <p class="mission-desc">All pets in our network are health-checked and vaccinated where applicable. We partner only with verified shelters and ethical rescue groups.</p>
+      </div>
+      <div class="mission-card reveal reveal-delay-3">
+        <div class="step-icon-wrap" style="margin:0 0 16px;background:var(--sage-pale);border-color:var(--border);">
+          <i data-lucide="users" style="width:24px;height:24px;color:var(--sage);"></i>
+        </div>
+        <h3 class="mission-title">Community Support</h3>
+        <p class="mission-desc">We're building a network of compassionate pet owners who support each other. Adoption is not the end of the journey — it's the beginning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Adoption Process ───────────────────────────────────── -->
+<section class="section-pad steps-section noise" aria-label="Adoption process">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" style="background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.15);">
+        <i data-lucide="clipboard-list" style="width:14px;height:14px;"></i>
+        How We Work
+      </span>
+      <h2 class="section-title" style="color:white;">Our Adoption <span style="font-family:'Playfair Display',serif;font-style:italic;color:var(--sage-light);">Journey</span></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.65);">A thoughtful, transparent process designed to create lifelong bonds.</p>
+    </div>
+    <div class="steps-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <div class="step-icon-wrap"><i data-lucide="search" style="color:white;width:24px;height:24px;"></i></div>
+        <h3 class="step-title">Browse & Connect</h3>
+        <p class="step-desc">Explore verified pet profiles with temperament evaluations, medical history, and care specs to find your ideal match.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <div class="step-icon-wrap"><i data-lucide="file-text" style="color:white;width:24px;height:24px;"></i></div>
+        <h3 class="step-title">Apply Online</h3>
+        <p class="step-desc">Complete our thoughtful adoption form detailing your domestic arrangement, daily routine, and animal experience.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <div class="step-icon-wrap"><i data-lucide="phone-call" style="color:white;width:24px;height:24px;"></i></div>
+        <h3 class="step-title">Review & Consultation</h3>
+        <p class="step-desc">Our adoption counselors review the paperwork and conduct an introductory chat to clarify any specific animal needs.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">4</div>
+        <div class="step-icon-wrap"><i data-lucide="users" style="color:white;width:24px;height:24px;"></i></div>
+        <h3 class="step-title">Meet & Greet</h3>
+        <p class="step-desc">Spend quality one-on-one time with your potential companion to confirm chemistry before making a lifetime commitment.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">5</div>
+        <div class="step-icon-wrap"><i data-lucide="file-check" style="color:white;width:24px;height:24px;"></i></div>
+        <h3 class="step-title">Finalize Agreement</h3>
+        <p class="step-desc">Review and formalize the lifelong adoption pledge ensuring humane treatment, health management, and safety.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">6</div>
+        <div class="step-icon-wrap"><i data-lucide="home" style="color:white;width:24px;height:24px;"></i></div>
+        <h3 class="step-title">Welcome Home</h3>
+        <p class="step-desc">Bring your new family member home with complete starter instructions and access to our follow-up support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Responsible Ownership ──────────────────────────────── -->
+<section class="section-pad" style="background:var(--cream);" aria-label="Responsible pet ownership">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label">
+        <i data-lucide="award" style="width:14px;height:14px;"></i>
+        Pet Welfare
+      </span>
+      <h2 class="section-title">Responsible Pet <span class="serif">Guardianship</span></h2>
+      <p class="section-sub">Owning a companion animal is one of life's richest privileges — and an enduring responsibility.</p>
+    </div>
+    <div class="ownership-grid">
+      <div style="background:white;border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-card);border:1px solid var(--border);" class="reveal">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <i data-lucide="stethoscope" style="width:22px;height:22px;color:var(--sage);"></i>
+          <h3 style="font-size:1.15rem;font-weight:800;color:var(--char);">Health & Preventive Medicine</h3>
+        </div>
+        <ul style="display:flex;flex-direction:column;gap:12px;font-family:'DM Sans',sans-serif;color:var(--body);font-size:14px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Schedule annual health examinations consistently</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Maintain mandatory rabies and core immunizations</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Administer monthly parasite and flea preventatives</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Practice dental maintenance and grooming hygiene</li>
+        </ul>
+      </div>
+
+      <div style="background:white;border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-card);border:1px solid var(--border);" class="reveal reveal-delay-1">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <i data-lucide="apple" style="width:22px;height:22px;color:var(--orange);"></i>
+          <h3 style="font-size:1.15rem;font-weight:800;color:var(--char);">Nutrition & Enrichment</h3>
+        </div>
+        <ul style="display:flex;flex-direction:column;gap:12px;font-family:'DM Sans',sans-serif;color:var(--body);font-size:14px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Provide nutritionally balanced, age-appropriate food</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Keep clean, fresh drinking water accessible 24/7</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Dedicate daily exercise time specific to breed stamina</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Introduce puzzle toys and mental stimulation rituals</li>
+        </ul>
+      </div>
+
+      <div style="background:white;border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-card);border:1px solid var(--border);" class="reveal">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <i data-lucide="home" style="width:22px;height:22px;color:var(--sage);"></i>
+          <h3 style="font-size:1.15rem;font-weight:800;color:var(--char);">Safety & Habitat Control</h3>
+        </div>
+        <ul style="display:flex;flex-direction:column;gap:12px;font-family:'DM Sans',sans-serif;color:var(--body);font-size:14px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Pet-proof home: lock away cleaning supplies & toxic foliage</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Secure balconies, terraces, and backyard perimeter fence lines</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Equip pets with an engraved collar tag and microchip</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Maintain temperature safety during peak summer and winter</li>
+        </ul>
+      </div>
+
+      <div style="background:white;border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-card);border:1px solid var(--border);" class="reveal reveal-delay-1">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <i data-lucide="smile" style="width:22px;height:22px;color:var(--orange);"></i>
+          <h3 style="font-size:1.15rem;font-weight:800;color:var(--char);">Behavioral & Social Bonding</h3>
+        </div>
+        <ul style="display:flex;flex-direction:column;gap:12px;font-family:'DM Sans',sans-serif;color:var(--body);font-size:14px;">
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Practice exclusively positive-reinforcement training</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Respect body language signals when animal shows stress</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Socialize young pets thoughtfully with people and peers</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;"><i data-lucide="check" style="width:16px;height:16px;color:var(--sage);flex-shrink:0;margin-top:3px;"></i> Provide calm decompression time when adjusting to a new home</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Meet the Team ──────────────────────────────────────── -->
+<section class="section-pad" style="background:var(--cream-2);" aria-label="Our team">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label">
+        <i data-lucide="users" style="width:14px;height:14px;"></i>
+        Leadership & Advisors
+      </span>
+      <h2 class="section-title">People Dedicated to <span class="serif">Welfare</span></h2>
+      <p class="section-sub">Our interdisciplinary coordinators work tirelessly to ensure happy matches across India.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="t-avatar" style="width:64px;height:64px;margin:0 auto 16px;">
+          <i data-lucide="user" style="width:28px;height:28px;color:var(--sage);"></i>
+        </div>
+        <div class="team-name">Asha Krishnan</div>
+        <div class="team-role">Director & Co-Founder</div>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;font-family:'DM Sans',sans-serif;">Veterinary behaviourist with 15 years of animal welfare advocacy across India.</p>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="t-avatar" style="width:64px;height:64px;margin:0 auto 16px;">
+          <i data-lucide="stethoscope" style="width:28px;height:28px;color:var(--sage);"></i>
+        </div>
+        <div class="team-name">Dr. Rohan Mehta</div>
+        <div class="team-role">Lead Veterinary Officer</div>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;font-family:'DM Sans',sans-serif;">BVSC graduate overseeing triage protocols and wellness assessments.</p>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-card-inner">
+          <div class="t-avatar" style="width:64px;height:64px;margin:0 auto 16px;">
+            <i data-lucide="user-check" style="width:28px;height:28px;color:var(--sage);"></i>
+          </div>
+          <div class="team-name">Priya Nair</div>
+          <div class="team-role">Adoption Director</div>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;font-family:'DM Sans',sans-serif;">Pairs families with appropriate companion temperaments.</p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="t-avatar" style="width:64px;height:64px;margin:0 auto 16px;">
+          <i data-lucide="message-square" style="width:28px;height:28px;color:var(--sage);"></i>
+        </div>
+        <div class="team-name">Arjun Patel</div>
+        <div class="team-role">Community Manager</div>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;font-family:'DM Sans',sans-serif;">Manages post-adoption follow-up networks and parent support groups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section-pad" style="background:var(--cream);" id="faq" aria-label="Frequently asked questions">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label">
+        <i data-lucide="help-circle" style="width:14px;height:14px;"></i>
+        Common Questions
+      </span>
+      <h2 class="section-title">Frequently Asked <span class="serif">Questions</span></h2>
+      <p class="section-sub">Clear answers regarding PetSphere, our mission, and the adoption process.</p>
+    </div>
+    <div style="max-width:760px;margin:0 auto;" id="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">
+          Is PetSphere an operational animal rescue?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a-1" role="region" aria-labelledby="faq-q-1">
+          PetSphere is a comprehensive design and frontend prototype developed as a BCA college assignment. It demonstrates clean UI/UX and web technologies. For real pet adoptions in India, we encourage reaching out to registered shelters like Friendicoes, BSPCA, or Animal Aid Unlimited.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">
+          How are my favourites and submitted forms handled?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a-2" role="region" aria-labelledby="faq-q-2">
+          All data operations run client-side using browser localStorage. No sensitive personal info is communicated across the internet, ensuring complete private offline demo functionality.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">
+          What technologies power this project?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a-3" role="region" aria-labelledby="faq-q-3">
+          The entire PetSphere website is crafted with semantic HTML5, pure CSS3 (utilizing custom design tokens, responsive CSS grids, and keyframe animations), and vanilla JavaScript.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ────────────────────────────────────────────── -->
+<section class="section-pad" id="contact" style="background:var(--cream-2);" aria-label="Contact us">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label">
+        <i data-lucide="mail" style="width:14px;height:14px;"></i>
+        Reach Out
+      </span>
+      <h2 class="section-title">Get in <span class="serif">Touch</span></h2>
+      <p class="section-sub">Have questions or want to learn more about animal welfare? We'd love to connect.</p>
+    </div>
+    <div class="contact-layout">
+      <!-- Contact Info -->
+      <div class="contact-info-block">
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <i data-lucide="map-pin" style="color:var(--sage);width:22px;height:22px;"></i>
+          </div>
+          <div>
+            <div class="ci-title">Registered Office</div>
+            <div class="ci-text">123 Green Park, Bandra West,<br>Mumbai — 400050, Maharashtra</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <i data-lucide="phone" style="color:var(--sage);width:22px;height:22px;"></i>
+          </div>
+          <div>
+            <div class="ci-title">Phone Contact</div>
+            <div class="ci-text">+91 98765 43210<br>Monday–Saturday: 9 AM – 7 PM</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <i data-lucide="mail" style="color:var(--sage);width:22px;height:22px;"></i>
+          </div>
+          <div>
+            <div class="ci-title">Email Enquiries</div>
+            <div class="ci-text">hello@petsphere.in<br>adoptions@petsphere.in</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">
+            <i data-lucide="clock" style="color:var(--sage);width:22px;height:22px;"></i>
+          </div>
+          <div>
+            <div class="ci-title">Operating Hours</div>
+            <div class="ci-text">Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: 10:00 AM – 3:00 PM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h3 style="font-size:1.3rem;font-weight:800;color:var(--char);margin-bottom:4px;">Send a Direct Note</h3>
+        <p style="font-size:14px;color:var(--muted);margin-bottom:28px;font-family:'DM Sans',sans-serif;">Academic project interface — messages logged locally for review.</p>
+        <form id="contact-form" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="c-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="c-name" class="form-control" placeholder="e.g. Priya Sharma" required>
+              <span class="field-error" id="c-name-err">Please enter your name.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="c-email" class="form-control" placeholder="you@example.com" required>
+              <span class="field-error" id="c-email-err">Please enter a valid email.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-subject">Subject Matter <span class="req">*</span></label>
+            <select id="c-subject" class="form-control" required>
+              <option value="">— Select an inquiry topic —</option>
+              <option value="adoption">Adoption Consultation</option>
+              <option value="care">Animal Health Guidance</option>
+              <option value="volunteer">Volunteer Opportunities</option>
+              <option value="support">Partnering with PetSphere</option>
+              <option value="other">General Feedback</option>
+            </select>
+            <span class="field-error" id="c-subject-err">Please select a subject.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-message">Your Message <span class="req">*</span></label>
+            <textarea id="c-message" class="form-control" rows="5" placeholder="Share your inquiry or background here…" required></textarea>
+            <span class="field-error" id="c-message-err">Please enter a message (at least 20 characters).</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" id="contact-submit-btn" style="width:100%;justify-content:center;">
+            <i data-lucide="send" style="width:18px;height:18px;"></i>
+            <span>Submit Inquiry</span>
+          </button>
+        </form>
+        <div class="success-banner" id="contact-success" role="alert" aria-live="polite">
+          <div class="success-banner-icon" style="display:flex;align-items:center;justify-content:center;margin-bottom:12px;">
+            <i data-lucide="check-circle" style="width:48px;height:48px;color:#1A6B30;"></i>
+          </div>
+          <h3>Inquiry Logged Successfully</h3>
+          <p>Thank you for connecting with PetSphere. In a live production system, our team responds within 24–48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="cta-section noise" aria-label="Call to action">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2 class="cta-title">Ready to Make a <span class="italic">Difference?</span></h2>
+    <p class="cta-sub">Explore verified profiles and discover the loyal animal waiting for your care.</p>
+    <div class="cta-btns">
+      <a href="pets.html" class="btn btn-white btn-lg">
+        <i data-lucide="compass" style="width:18px;height:18px;color:var(--sage);"></i>
+        <span>Browse Available Pets</span>
+      </a>
+      <a href="adoption.html" class="btn btn-outline-white btn-lg">
+        <i data-lucide="file-text" style="width:18px;height:18px;"></i>
+        <span>Adoption Form</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">
+            <i data-lucide="paw-print" style="color:white;width:20px;height:20px;"></i>
+          </div>
+          <div class="footer-brand-name">Pet<em>Sphere</em></div>
+        </div>
+        <p class="footer-desc">Connecting loving families with animals in need of refuge. We believe every animal deserves safety, comfort, and respect.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Navigation</div>
+        <a href="index.html">Home</a>
+        <a href="pets.html">Explore Pets</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="adoption.html">Apply to Adopt</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Categories</div>
+        <a href="pets.html?cat=dogs">Dogs</a>
+        <a href="pets.html?cat=cats">Cats</a>
+        <a href="pets.html?cat=rabbits">Rabbits</a>
+        <a href="pets.html?cat=parrots">Parrots</a>
+        <a href="pets.html?cat=fish">Fish</a>
+        <a href="pets.html?cat=turtles">Turtles</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item"><i data-lucide="map-pin" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>123 Green Park, Bandra West, Mumbai</span></div>
+        <div class="footer-contact-item"><i data-lucide="phone" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i data-lucide="mail" style="width:16px;height:16px;color:var(--sage-light);margin-top:2px;"></i> <span>hello@petsphere.in</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PetSphere. Dedicated to animal rescue.</span>
+      <span>Demo project — BCA College Assignment</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/pets.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(b => {
+      b.classList.remove('open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    if (!isOpen) {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.nextElementSibling.classList.add('open');
+    }
+  });
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  const name = document.getElementById('c-name').value.trim();
+  const nameErr = document.getElementById('c-name-err');
+  if (name.length < 2) { nameErr.classList.add('show'); document.getElementById('c-name').classList.add('is-error'); valid = false; }
+  else { nameErr.classList.remove('show'); document.getElementById('c-name').classList.remove('is-error'); }
+
+  const email = document.getElementById('c-email').value.trim();
+  const emailErr = document.getElementById('c-email-err');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { emailErr.classList.add('show'); document.getElementById('c-email').classList.add('is-error'); valid = false; }
+  else { emailErr.classList.remove('show'); document.getElementById('c-email').classList.remove('is-error'); }
+
+  const subj = document.getElementById('c-subject').value;
+  const subjErr = document.getElementById('c-subject-err');
+  if (!subj) { subjErr.classList.add('show'); document.getElementById('c-subject').classList.add('is-error'); valid = false; }
+  else { subjErr.classList.remove('show'); document.getElementById('c-subject').classList.remove('is-error'); }
+
+  const msg = document.getElementById('c-message').value.trim();
+  const msgErr = document.getElementById('c-message-err');
+  if (msg.length < 20) { msgErr.classList.add('show'); document.getElementById('c-message').classList.add('is-error'); valid = false; }
+  else { msgErr.classList.remove('show'); document.getElementById('c-message').classList.remove('is-error'); }
+
+  if (!valid) return;
+
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('contact-success').classList.add('show');
+  showToast('Inquiry recorded locally!');
+  if (window.lucide) lucide.createIcons();
+});
+
+if (location.hash === '#contact') {
+  setTimeout(() => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  }, 300);
+}
+
+if (window.lucide) {
+    window.lucide.createIcons();
+}
+</script>
+</body>
+</html>
